@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pre-LandingPage1</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	font-size: 10px;
+	font-weight: 500;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+    background: transparent;
+	font-family: 'Inter', sans-serif;
+	color : black;
+	letter-spacing: -0.9px;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+img {
+	width: 100%;
+}
+
+/* 제목 컴포넌트 */
+h2 {
+	font-size: 1.4rem;
+	font-weight: 600;
+	/* font-size: 3.7rem; */
+}
+
+/* box-row 컴포넌트 */
+.box-row {
+	width: 100%;
+	display : flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	gap : 1rem;
+}
+
+/* 버튼 컴포넌트 */
+.btn {
+	font-size: 1.2rem;
+	border : 0.1rem solid #BCBCBC;
+	border-radius: 0.6rem;
+	background: white;
+	cursor: pointer;
+	padding: 0.55rem 4%;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+}
+
+.wrap {
+	position: relative;
+	background-color: white;
+	width: 100%;
+	height: 100vh;
+	min-height: 56.8rem;
+}
+
+.wrap::before {
+	content: '';
+	position: absolute;
+	top : 0;
+	left : 0;
+	right : 0;
+	bottom : 0;
+	background: url('./img/img-landing.jpg') no-repeat center/cover;
+	background-size: 100% 100%;
+	filter: grayscale(100%) brightness(50%);
+	-webkit-filter: grayscale(100%) brightness(50%);
+	opacity: 0.05;
+  	z-index: 0;
+}
+
+.wrap1::before {
+	opacity: 0.08;
+}
+.wrap2::before {
+	opacity: 0.11;
+}
+.wrap3::before {
+	opacity: 0.14;
+}
+.wrap4::before {
+	opacity: 0.17;
+}
+.wrap5::before {
+	opacity: 0.2;
+}
+
+
+header {
+	width: 100%;
+	padding : 2rem 2rem 0 2rem;
+	display : flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	z-index: 10;
+}
+
+header img {
+	width: 10.7rem;
+	/* max-width: 31.5% */
+}
+
+main {
+	position: relative;
+	width: 100%;
+	padding : 1rem 2rem;
+	display : flex;
+    justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	height: calc(100% - 15.8rem);
+	gap : 1rem;
+	z-index: 10;
+}
+
+main h1 {
+	text-align: center;
+	/* font-size: 5.3vw; */
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+main h1 strong {
+	/* font-size: 6.9vw; */
+	font-size: 2.6rem;
+	font-weight: bold;
+}
+
+main .contents  {
+	display : flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	gap : 1rem;
+}
+
+main .contents-gender {
+	justify-content: center;
+	flex-direction: row;
+	gap : 3rem;
+}
+
+main .contents-gender i {
+	width: 8rem;
+	max-width: 21.6vw;
+	height: 8rem;
+	max-height: 21.6vw;
+	cursor: pointer;
+	font-size: unset;
+	border : unset;
+	border-radius: unset;
+	padding : unset;
+	overflow: unset;
+	text-overflow: unset;
+	white-space: unset;
+}
+
+main .contents-gender i:active {
+	filter : brightness(0.95);
+}
+
+main .contents-gender i.img-men {
+	background: url('./img/img-men.svg') no-repeat center/contain;
+}
+
+main .contents-gender i.img-women {
+	background: url('./img/img-women.svg') no-repeat center/contain;
+}
+
+.complete-btn {
+	width: 100%;
+	height: 5rem;
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: white;
+	background-color: #368AFE;
+	cursor: pointer;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	position: relative;
+	z-index: 10;
+}
+
+.complete-btn:active {
+	filter : brightness(0.95);
+}
+
+/* 애니메이션 [s] */
+	.step {
+		position: relative;
+		width: 100%;
+		height: 6.1rem;
+	}
+	.step .stepbox {
+		width: 6.8rem;
+		height: 6.1rem;
+		background: url('./img/img-charAnimation.png');
+		border-radius: 0;
+		position: absolute;
+		left: 0%;
+		/* left: calc(100% - 6.4rem); */
+		top: 10%;
+		animation: ani 1s steps(4, start) infinite;
+		transition: left 1s linear;
+	}
+	.step .img-flag {
+		position: absolute;
+		width: 3rem;
+		height: 4.5rem;
+		right: 0.4rem;
+		bottom: 0;
+	}
+	.step [class*=img-talk] {
+		position: absolute;
+		background: url('./img/img-wait-cop.png') no-repeat center/cover;
+		width: 13.3rem;
+		height: 4.7rem;
+    	left : 6.1rem;
+    	top: -2rem;
+	}
+
+	@keyframes ani {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -27.2rem 0;
+	}
+	}
+/* 애니메이션 [e] */
+
+/* 프로그래스바 [s] */
+.progressbar-wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 0.4rem;
+  .ing-bar {
+    width: 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background: #000A78;
+    z-index: 3;
+	transition: width 1s linear;
+  }
+  .leftover-bar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: #BCBCBC;
+    z-index: 2;
+  }
+}
+/* 프로그래스바 [e] */
+
+/* cop 전용 [s] */
+.cop .btn.active {
+	background-color: #368afe;
+	color : white;
+	border : 0.1rem solid #368afe;
+}
+
+.cop .btn.active {
+	background-color: #368afe;
+	color : white;
+	border : 0.1rem solid #368afe;
+}
+
+.cop .img-men.active {
+	background-color: unset;
+	color : unset;
+	border: unset;
+	background: url('./img/img-men-active-cop.svg') no-repeat center/cover;
+}
+
+.cop .img-women.active {
+	background-color: unset;
+	color : unset;
+	border: unset;
+	background: url('./img/img-women-active-cop.svg') no-repeat center/cover;
+}
+
+.cop .img-talk1 {
+	background: url('./img/img-info-cop.png') no-repeat center/cover;
+	width: 15.8rem;
+	left : 6.1rem;
+}
+.cop .img-talk2 {
+	background: url('./img/img-data-cop.png') no-repeat center/cover;
+	width: 14.8rem;
+	left : 6.1rem;
+}
+.cop .img-talk3 {
+	background: url('./img/img-genue-cop.png') no-repeat center/cover;
+	width: 17.5rem;
+	left : -16.5rem;
+}
+.cop .img-talk4 {
+	background: url('./img/img-almost-cop.png') no-repeat center/cover;
+	width: 12rem;
+	height: 4.8rem;
+	left : -11rem;
+}
+.cop .img-talk5 {
+	background: url('./img/img-complete-cop.png') no-repeat center/cover;
+	width: 13.1rem;
+	height: 4.8rem;
+	left : -12rem;
+}
+/* cop 전용 [e] */
+@media (min-width : 589px) {
+	main {
+		justify-content: space-around;
+	}
+	.step .img-wait {
+		top : -1rem;
+	}
+}
+
+@media (max-width : 379px) {
+	main {
+		justify-content: center;
+	}
+	h1 {
+		font-size: 5.3vw !important;
+	}
+	h1 strong {
+		font-size: 6.9vw !important;
+	}
+	h2 {
+		font-size: 3.7vw;
+	}
+	.btn {
+		font-size: 3.2vw;
+	}
+	.complete-btn {
+		/* height: 10.6vw; */
+		font-size: 4.8vw;
+	}
+}
+
+</style>
+</head>
+
+<body>
+	<div class="wrap cop">
+		<header>	
+			<img src="./img/img-logo.svg" alt="img-logo">
+		</header>
+		<main>
+			<h1><strong>잠시만요!</strong><br>정품 여부를 확인하는 중입니다.</h1>
+			<article class="contents contents-gender">
+				<i class="btn gender img-men"></i>
+				<i class="btn gender img-women"></i>	
+			</article>
+			<article class="contents contents-age">
+				<h2>1. 연령대를 선택해 주세요.</h2>
+				<div class="box-row">
+					<button class="btn age">10대</button>
+					<button class="btn age">20대</button>
+					<button class="btn age">30대</button>
+					<button class="btn age">40대</button>
+					<button class="btn age">50대 이상</button>
+				</div>
+			</article>
+			<article class="contents contents-show">
+				<h2>2. 모바일 앱과 웹사이트 중 어느 쪽에서 더 자주 쇼핑을 하시나요?</h2>
+				<div class="box-row">
+					<button class="btn platform">모바일 앱</button>
+					<button class="btn platform">웹 사이트</button>
+				</div>
+			</article>
+			<article class="contents contents-preference">
+				<h2>3. 온라인/모바일 쇼핑몰과 오프라인 구매처 중 어느 곳을 더 선호하시나요?</h2>
+				<div class="box-row">
+					<button class="btn situation">온라인</button>
+					<button class="btn situation">오프라인</button>
+				</div>
+			</article>
+			<article class="contents contents-preference">
+				<h2>4. 브랜드 공식몰과 온라인 쇼핑몰 중 어디에서 구매하는 것을 선호하시나요?</h2>
+				<div class="box-row">
+					<button class="btn preference">브랜드 공식몰</button>
+					<button class="btn preference">온라인 쇼핑몰</buton>
+				</div>
+			</article>
+		</main>
+		<!-- <button id="moveBtn">이동</button> -->
+		<!-- 애니메이션 구간 [s]-->
+		<div class="svgBox timing step">
+			<div class="stepbox"><i class="img-talk" alt="img-wait"></i></div>
+			<img class="img-flag" src="./img/img-flag.png" alt="img-flag">
+		</div>
+		<!-- 애니메이션 구간 [e]-->
+		<!-- 프로그래스 바 [s] -->
+		<div class="progressbar-wrap">
+			<span class="ing-bar"></span>
+			<span class="leftover-bar"></span>
+		</div>
+		<!-- 프로그래스 바 [e] -->
+		<button class="complete-btn">정품 결과를 확인하세요</button>
+	</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Y3Q1Qj+6hZn+1GcQG/xQd1V4AM6UxC/5yE=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+	btnClick();
+	updateUI(); // 초기 상태 맞추기
+});
+
+// 1) 버튼 토글 & 클릭 시 UI 업데이트 호출
+function btnClick() {
+$('.contents .btn').on('click', function() {
+	const $btn   = $(this);
+	const $group = $btn.closest('.contents');
+
+	if ($btn.hasClass('active')) {
+	$btn.removeClass('active');
+	} else {
+	$group.find('.btn.active').removeClass('active');
+	$btn.addClass('active');
+	}
+
+	updateUI();
+});
+}
+
+  // 2) active 클래스 개수에 따라 UI 각 요소를 옮기거나 넓이 변경
+function updateUI() {
+  const activeCount = $('.contents .btn.active').length;
+  const $talk = $('.img-talk');
+  const $warp = $('.wrap');
+  const $flag = $('.img-flag');
+  const $box  = $('.step .stepbox');
+  const $bar  = $('.progressbar-wrap .ing-bar');
+
+  // 1) img-talk 숫자 클래스 토글
+  $talk.removeClass(function(i, cls) {
+    return (cls.match(/(^|\s)img-talk\d+/g) || []).join(' ');
+  });
+  if (activeCount > 0) {
+    $talk.addClass('img-talk' + activeCount);
+    $flag.show();
+  }
+  if (activeCount >= 5) {
+    $flag.hide();
+  }
+
+  // 2) warp 숫자 클래스 토글 (img-talk과 동일하게)
+  $warp.removeClass(function(i, cls) {
+    return (cls.match(/(^|\s)wrap\d+/g) || []).join(' ');
+  });
+  if (activeCount > 0) {
+    $warp.addClass('wrap' + (activeCount));
+  }
+
+  // 3) .stepbox 이동 (첫 클릭 25%, 그 외 count*20%)
+  if (activeCount === 0) {
+    $box.css('left', '0%');
+  } else if (activeCount === 1) {
+    $box.css('left', 'calc(25% - 6.4rem)');
+  } else {
+    $box.css('left', `calc(${activeCount * 20}% - 6.4rem)`);
+  }
+
+  // 4) 프로그래스바 (첫 클릭 25%, 그 외 count*20%)
+  let $width;
+  if (activeCount === 0) {
+    $width = 0;
+  } else if (activeCount === 1) {
+    $width = 25;
+  } else {
+    $width = activeCount * 20;
+  }
+  $bar.css('width', $width + '%');
+}
+</script>
+</body>
+</html>

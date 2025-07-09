@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .step {
+        height: 700px;
+        background: #fde7ef;
+        position: relative;
+      }
+      .step .stepbox {
+        width: 68px;
+        height: 61px;
+        background: url('./img/img-charAnimation.png');
+        border-radius: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: ani 1s steps(4, start) infinite;
+      }
+      .step .stepbox.start {
+        animation-play-state: running;
+      }
+      .step .stepbox.stop {
+        animation-play-state: paused;
+      }
+      @keyframes ani {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          /* background-position: 7293px 0; */
+          background-position: -272px 0;
+        }
+      }
+      .stepBtn {
+        position: absolute;
+        left: 15px;
+        top: 20px;
+      }
+      .stepBtn a {
+        background: #e16162;
+        color: #fff;
+        padding: 10px;
+        margin: 3px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="svgBox timing step">
+      <div class="stepbox"></div>
+      <span class="stepBtn">
+        <a href="#" class="stepBtnStart">Start</a>
+        <a href="#" class="stepBtnStop">Stop</a>
+      </span>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      animation();
+    });
+
+    function animation() {
+      $(".stepBtnStart").click(function (e) {
+        e.preventDefault();
+        $(".stepbox").removeClass("stop").addClass("start");
+      });
+      $(".stepBtnStop").click(function (e) {
+        e.preventDefault();
+        $(".stepbox").removeClass("start").addClass("stop");
+      });
+    }
+  </script>
+</html>
