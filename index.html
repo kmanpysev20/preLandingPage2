@@ -281,6 +281,73 @@ main .contents-gender i.img-women {
 }
 /* 프로그래스바 [e] */
 
+/* 모달 팝업 [s] */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,.3);
+  backdrop-filter: blur(1px);
+  z-index: 20;
+}
+
+.modal .modal-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    padding: 2rem;
+    background: white;
+    border-radius: 0.8rem;
+	overflow: hidden;
+    gap: 1rem;
+	box-shadow: 1px 1px 8px 0px;
+}
+
+.modal .modal-popup .box {
+	display : flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal .modal-popup .box .ic-warning {
+	width: 16vw;
+	height: 16vw;
+	background: url('./img/ic-warning.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-bottom : 2rem;
+}
+
+.modal .modal-popup .box .txt {
+	font-size: 4vw;
+	font-weight: 600;
+	color : #6B6B6B; 
+}
+
+.modal .modal-popup .box .txt:last-of-type {
+	margin-bottom : 2rem;
+} 
+
+.modal .modal-popup .box .check-btn {
+	font-size: 4vw;	
+	font-weight: 600;
+	color : white; 
+	width: 50%;
+	padding : 0.75rem 0.25rem;
+	background-color: #328fef;
+	border-radius: 0.8rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+/* 모달 팝업 [e] */
+
 /* cop 전용 [s] */
 .cop .btn.active {
 	background-color: #368afe;
@@ -378,8 +445,8 @@ main .contents-gender i.img-women {
 		<main>
 			<h1><strong>잠시만요!</strong><br>정품 여부를 확인하는 중입니다.</h1>
 			<article class="contents contents-gender">
-				<i class="btn gender img-men"></i>
-				<i class="btn gender img-women"></i>	
+				<i class="btn gender img-men" value="남자"></i>
+				<i class="btn gender img-women" value="여자"></i>	
 			</article>
 			<article class="contents contents-age">
 				<h2>1. 연령대를 선택해 주세요.</h2>
@@ -426,6 +493,18 @@ main .contents-gender i.img-women {
 			<span class="leftover-bar"></span>
 		</div>
 		<!-- 프로그래스 바 [e] -->
+		<!-- 선택 안되었을 때 팝업 [s] -->
+		<div class="modal modal-select">
+			<div class="modal-popup">
+				<div class="box">
+					<i class="ic-warning"></i>
+					<p class="txt">답변 선택을 완료해주세요</p>
+					<p class="txt">(3초면 끝!)</p>
+					<button class="check-btn">확인</button>
+				</div>
+			</div>
+		</div>
+		<!-- 선택 안되었을 때 팝업 [e] -->
 		<button class="complete-btn">정품 결과를 확인하세요</button>
 	</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Y3Q1Qj+6hZn+1GcQG/xQd1V4AM6UxC/5yE=" crossorigin="anonymous"></script>
@@ -433,6 +512,9 @@ main .contents-gender i.img-women {
 $(document).ready(function() {
 	btnClick();
 	updateUI(); // 초기 상태 맞추기
+	iOSZoomScale();
+	completeBtnClick();
+	popCancle();
 });
 
 // 1) 버튼 토글 & 클릭 시 UI 업데이트 호출
@@ -501,6 +583,51 @@ function updateUI() {
   }
   $bar.css('width', $width + '%');
 }
+
+function completeBtnClick() {
+	$('.complete-btn').on('click', function() {
+		if($('.gender').hasClass('active') && 
+		$('.age').hasClass('active') && 
+		$('.platform').hasClass('active') && 
+		$('.situation').hasClass('active') && 
+		$('.preference').hasClass('active')) {
+			const gender = $('.gender.active').attr('value');
+			const age = $('.age.active').text();
+			const platform = $('.platform.active').text();
+			const situation = $('.situation.active').text();
+			const preference = $('.preference.active').text();
+			alert('※Complete※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
+		} else {
+			$('.modal').fadeIn(500);
+		}
+	});
+}
+
+// 팝업 cancle 버튼 클릭 [s]
+function popCancle() {
+	$('.check-btn').on('click' , function() {
+		$('.modal').fadeOut(500);
+	});
+}
+// 팝업 cancle 버튼 클릭 [e]
+
+// iOS 짐 및 확대기능 막기 [s]
+function iOSZoomScale() {
+	$(document).on('gesturestart', function(e) {
+		e.preventDefault(); // iOS Pinch-to-Zoom 비활성화
+	});
+
+	let lastTouchEnd = 0;
+	$(document).on('touchend', function(event) {
+		let now = new Date().getTime();
+		if (now - lastTouchEnd <= 300) {
+			event.preventDefault(); // iOS 더블 탭 확대 방지
+		}
+		lastTouchEnd = now;
+	});
+}
+// iOS 짐 및 확대기능 막기 [e]
+
 </script>
 </body>
 </html>
