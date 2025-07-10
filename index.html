@@ -26,6 +26,10 @@
 	font-family: 'Inter', sans-serif;
 	color : black;
 	letter-spacing: -0.9px;
+	-webkit-tap-highlight-color: transparent;
+}
+:focus {
+  outline: none;
 }
 
 html {
@@ -398,9 +402,9 @@ main .contents-gender i.img-women {
 }
 .cop .img-talk5 {
 	background: url('./img/img-complete-cop.png') no-repeat center/cover;
-	width: 13.1rem;
-	height: 4.8rem;
-	left : -12rem;
+	width: 14.4rem;
+	height: 4.7rem;
+	left : -13rem;
 }
 /* cop 전용 [e] */
 @media (min-width : 589px) {
@@ -611,7 +615,7 @@ function popCancle() {
 }
 // 팝업 cancle 버튼 클릭 [e]
 
-// iOS 짐 및 확대기능 막기 [s]
+// iOS Zoom 및 확대기능 막기 [s]
 function iOSZoomScale() {
 	$(document).on('gesturestart', function(e) {
 		e.preventDefault(); // iOS Pinch-to-Zoom 비활성화
