@@ -39,6 +39,11 @@
 
 html {
 	overflow-x: hidden;
+	overscroll-behavior: contain; /* 또는 none */
+}
+
+body {
+	 overscroll-behavior: contain; /* 또는 none */
 }
 
 img {
@@ -127,15 +132,10 @@ header {
 	z-index: 10;
 }
 
-header img {
-	width: 10.7rem;
-	/* max-width: 31.5% */
-}
-
 main {
 	position: relative;
 	width: 100%;
-	padding : 1rem 2rem 2rem 2rem;
+	padding : 0 2rem 2rem 2rem;
 	display : flex;
     justify-content: center;
 	align-content: center;
@@ -243,14 +243,6 @@ main .contents-gender i.img-women {
 		right: 0.4rem;
 		bottom: 0;
 	}
-	.step [class*=img-talk] {
-		position: absolute;
-		background: url('./img/img-wait-cop.png') no-repeat center/cover;
-		width: 13.3rem;
-		height: 4.7rem;
-    	left : 5.2rem;
-    	top: -2rem;
-	}
 
 	@keyframes ani {
 	0% {
@@ -352,7 +344,7 @@ main .contents-gender i.img-women {
 	color : white; 
 	width: 50%;
 	padding : 0.75rem 0.25rem;
-	background-color: #328fef;
+	background-color: #c6c7c2;
 	border-radius: 0.8rem;
 	cursor: pointer;
 	transition: all 0.2s;
@@ -360,6 +352,13 @@ main .contents-gender i.img-women {
 /* 모달 팝업 [e] */
 
 /* cop 전용 [s] */
+.cop header .img-logo {
+	background: url('./img/img-logo.svg') no-repeat center/cover;
+	width: 10.7rem;
+	height: 2.3rem;
+	/* max-width: 31.5% */
+}
+
 .cop .btn.active {
 	background-color: #368afe;
 	color : white;
@@ -386,34 +385,224 @@ main .contents-gender i.img-women {
 	background: url('./img/img-women-active-cop.svg') no-repeat center/cover;
 }
 
+.cop .step [class*=img-talk] {
+	position: absolute;
+	background: url('./img/img-wait-cop.png') no-repeat center/cover;
+	width: 13.3rem;
+	height: 4.7rem;
+	left : 5.2rem;
+	top: -2rem;
+}
+
 .cop .img-talk1 {
-	background: url('./img/img-info-cop.png') no-repeat center/cover;
-	width: 15.8rem;
-	left : 5.4rem;
+	background: url('./img/img-info-cop.png') no-repeat center/cover !important;
+	width: 15.8rem !important;
+	left : 5.4rem !important;
 }
 .cop .img-talk2 {
-	background: url('./img/img-data-cop.png') no-repeat center/cover;
-	width: 14.8rem;
-	left : 5.4rem;
+	background: url('./img/img-data-cop.png') no-repeat center/cover !important;
+	width: 14.8rem !important;
+	left : 5.4rem !important;
 }
 .cop .img-talk3 {
-	background: url('./img/img-genue-cop.png') no-repeat center/cover;
-	width: 17.5rem;
-	left : -16rem;
+	background: url('./img/img-genue-cop.png') no-repeat center/cover !important;
+	width: 17.5rem !important;
+	left : -16rem !important;
 }
 .cop .img-talk4 {
-	background: url('./img/img-almost-cop.png') no-repeat center/cover;
-	width: 12rem;
-	height: 4.8rem;
-	left : -10.6rem;
+	background: url('./img/img-almost-cop.png') no-repeat center/cover !important;
+	width: 12rem !important;
+	height: 4.8rem !important;
+	left : -10.6rem !important;
 }
 .cop .img-talk5 {
-	background: url('./img/img-complete-cop.png') no-repeat center/cover;
-	width: 14.4rem;
-	height: 4.7rem;
-	left : -13rem;
+	background: url('./img/img-complete-cop.png') no-repeat center/cover !important;
+	width: 14.4rem !important;
+	height: 4.7rem !important;
+	left : -13rem !important;
+}
+.cop .step .img-flag {
+	background: url('./img/img-flag.png') no-repeat center/cover !important;
+	position: absolute !important;
+	width: 3rem !important;
+	height: 4.5rem !important;
+	right: 0.4rem !important;
+	bottom: 0 !important;
 }
 /* cop 전용 [e] */
+
+/* ht 전용 [s] */
+.ht header .img-logo {
+	background: url('./img/img-logo-ht.svg') no-repeat center/cover;
+	width: 10.7rem;
+	height: 2.3rem;
+	/* max-width: 31.5% */
+}
+
+.ht .btn.active {
+	background-color: #000;
+	color : white;
+	border : 0.1rem solid #000;
+}
+
+.ht .btn.active {
+	background-color: #000;
+	color : white;
+	border : 0.1rem solid #000;
+}
+
+.ht .img-men.active {
+	background-color: unset;
+	color : unset;
+	border: unset;
+	background: url('./img/img-men-active-ht.svg') no-repeat center/cover;
+}
+
+.ht .img-women.active {
+	background-color: unset;
+	color : unset;
+	border: unset;
+	background: url('./img/img-women-active-ht.svg') no-repeat center/cover;
+}
+
+.ht .step [class*=img-talk] {
+	position: absolute;
+	background: url('./img/img-wait-ht.png') no-repeat center/cover;
+	width: 13.3rem;
+	height: 4.7rem;
+	left : 5.2rem;
+	top: -2rem;
+}
+
+.ht .img-talk1 {
+	background: url('./img/img-info-ht.png') no-repeat center/cover !important;
+	width: 15.8rem !important;
+	left : 5.4rem !important;
+}
+.ht .img-talk2 {
+	background: url('./img/img-data-ht.png') no-repeat center/cover !important;
+	width: 14.8rem !important;
+	left : 5.4rem !important;
+}
+.ht .img-talk3 {
+	background: url('./img/img-genue-ht.png') no-repeat center/cover !important;
+	width: 17.5rem !important;
+	left : -16rem !important;
+}
+.ht .img-talk4 {
+	background: url('./img/img-almost-ht.png') no-repeat center/cover !important;
+	width: 12rem !important;
+	height: 4.8rem !important;
+	left : -10.6rem !important;
+}
+.ht .img-talk5 {
+	background: url('./img/img-complete-ht.png') no-repeat center/cover !important;
+	width: 14.4rem !important;
+	height: 4.7rem !important;
+	left : -13rem !important;
+}
+.ht .step .img-flag {
+	background: url('./img/img-flag-ht.png') no-repeat center/cover !important;
+	position: absolute !important;
+	width: 3rem !important;
+	height: 4.5rem !important;
+	right: 0.4rem !important;
+	bottom: 0 !important;
+}
+.ht .complete-btn {
+	background-color: #000;
+}
+.ht .progressbar-wrap .ing-bar {
+	background-color: #000;
+}
+/* ht 전용 [e] */
+
+/* gl 전용 [s] */
+.gl header .img-logo {
+	background: url('./img/img-logo-gl.svg') no-repeat center/cover;
+	width: 10.7rem;
+	height: 2.3rem;
+	/* max-width: 31.5% */
+}
+
+.gl .btn.active {
+	background-color: #367f76;
+	color : white;
+	border : 0.1rem solid #367f76;
+}
+
+.gl .btn.active {
+	background-color: #367f76;
+	color : white;
+	border : 0.1rem solid #367f76;
+}
+
+.gl .img-men.active {
+	background-color: unset;
+	color : unset;
+	border: unset;
+	background: url('./img/img-men-active-gl.svg') no-repeat center/cover;
+}
+
+.gl .img-women.active {
+	background-color: unset;
+	color : unset;
+	border: unset;
+	background: url('./img/img-women-active-gl.svg') no-repeat center/cover;
+}
+
+.gl .step [class*=img-talk] {
+	position: absolute;
+	background: url('./img/img-wait-gl.png') no-repeat center/cover;
+	width: 13.3rem;
+	height: 4.7rem;
+	left : 5.2rem;
+	top: -2rem;
+}
+
+.gl .img-talk1 {
+	background: url('./img/img-info-gl.png') no-repeat center/cover !important;
+	width: 15.8rem !important;
+	left : 5.4rem !important;
+}
+.gl .img-talk2 {
+	background: url('./img/img-data-gl.png') no-repeat center/cover !important;
+	width: 14.8rem !important;
+	left : 5.4rem !important;
+}
+.gl .img-talk3 {
+	background: url('./img/img-genue-gl.png') no-repeat center/cover !important;
+	width: 17.5rem !important;
+	left : -16rem !important;
+}
+.gl .img-talk4 {
+	background: url('./img/img-almost-gl.png') no-repeat center/cover !important;
+	width: 12rem !important;
+	height: 4.8rem !important;
+	left : -10.6rem !important;
+}
+.gl .img-talk5 {
+	background: url('./img/img-complete-gl.png') no-repeat center/cover !important;
+	width: 14.4rem !important;
+	height: 4.7rem !important;
+	left : -13rem !important;
+}
+.gl .step .img-flag {
+	background: url('./img/img-flag-gl.png') no-repeat center/cover !important;
+	position: absolute !important;
+	width: 3rem !important;
+	height: 4.5rem !important;
+	right: 0.4rem !important;
+	bottom: 0 !important;
+}
+.gl .complete-btn {
+	background-color: #367f76;
+}
+.gl .progressbar-wrap .ing-bar {
+	background-color: #000;
+}
+/* gl 전용 [e] */
+
 @media (min-width : 589px) {
 	main {
 		justify-content: space-around;
@@ -451,7 +640,7 @@ main .contents-gender i.img-women {
 <body>
 	<div class="wrap cop">
 		<header>	
-			<img src="./img/img-logo.svg" alt="img-logo">
+			<i class="img-logo"></i>
 		</header>
 		<main>
 			<h1><strong>잠시만요!</strong><br>정품 여부를 확인하는 중입니다.</h1>
@@ -487,7 +676,7 @@ main .contents-gender i.img-women {
 				<h2>4. 브랜드 공식몰과 온라인 쇼핑몰 중 어디에서 구매하는 것을 선호하시나요?</h2>
 				<div class="box-row">
 					<button class="btn preference">브랜드 공식몰</button>
-					<button class="btn preference">온라인 쇼핑몰</buton>
+					<button class="btn preference">온라인 쇼핑몰</button>
 				</div>
 			</article>
 		</main>
@@ -495,7 +684,7 @@ main .contents-gender i.img-women {
 		<!-- 애니메이션 구간 [s]-->
 		<div class="svgBox timing step">
 			<div class="stepbox"><i class="img-talk" alt="img-wait"></i></div>
-			<img class="img-flag" src="./img/img-flag.png" alt="img-flag">
+			<i class="img-flag"></i>
 		</div>
 		<!-- 애니메이션 구간 [e]-->
 		<!-- 프로그래스 바 [s] -->
@@ -617,7 +806,7 @@ function completeBtnClick() {
 			const platform = $('.platform.active').text();
 			const situation = $('.situation.active').text();
 			const preference = $('.preference.active').text();
-			alert('※Complete※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
+			alert('※Complete - TEST※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
 		} else {
 			$('.modal').fadeIn(500);
 		}
