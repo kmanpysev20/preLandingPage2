@@ -28,6 +28,11 @@
 	letter-spacing: -0.9px;
 	-webkit-tap-highlight-color: transparent;
 }
+
+:root {
+	--vh : 100%;
+}
+
 :focus {
   outline: none;
 }
@@ -74,7 +79,8 @@ h2 {
 	position: relative;
 	background-color: white;
 	width: 100%;
-	height: 100vh;
+ 	height: calc(var(--vh) * 100); /* 안전한 높이 사용 */
+	/* height: 100%; */
 	min-height: 56.8rem;
 }
 
@@ -512,7 +518,16 @@ main .contents-gender i.img-women {
 		<button class="complete-btn">정품 결과를 확인하세요</button>
 	</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Y3Q1Qj+6hZn+1GcQG/xQd1V4AM6UxC/5yE=" crossorigin="anonymous"></script>
+
 <script>
+// 브라우저 높이 최우선 실행
+function setRealVh() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setRealVh();
+window.addEventListener('resize', setRealVh);
+
 $(document).ready(function() {
 	btnClick();
 	updateUI(); // 초기 상태 맞추기
@@ -520,6 +535,7 @@ $(document).ready(function() {
 	completeBtnClick();
 	popCancle();
 });
+
 
 // 1) 버튼 토글 & 클릭 시 UI 업데이트 호출
 function btnClick() {
