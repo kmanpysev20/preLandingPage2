@@ -652,12 +652,37 @@ main .contents-gender i.img-women {
 }
 /* gl 전용 [e] */
 
+
 @media (min-width : 589px) {
 	main {
 		justify-content: space-around;
 	}
+	main .contents {
+		padding-left: 15vw;
+	}
+	main .contents:first-of-type {
+		padding : 0;
+	}
 	.step .img-wait {
 		top : -1rem;
+	}
+}
+
+@media (min-width : 736px) {
+	main .contents {
+		padding-left: 22vw;
+	}
+}
+
+@media (min-width : 1024px) {
+	main .contents {
+		padding-left: 25vw;
+	}
+}
+
+@media (min-width : 1280px) {
+	main .contents {
+		padding-left: 28vw;
 	}
 }
 
@@ -756,8 +781,7 @@ main .contents-gender i.img-women {
 		<!-- 선택 안되었을 때 팝업 [e] -->
 		<button class="complete-btn">정품 결과를 확인하세요</button>
 	</div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Y3Q1Qj+6hZn+1GcQG/xQd1V4AM6UxC/5yE=" crossorigin="anonymous"></script>
-
+	
 <script>
 
 // 0) 브라우저 높이 최우선 실행
