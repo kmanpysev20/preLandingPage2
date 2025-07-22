@@ -1,11 +1,10 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>cop</title>
+<title>preLandingPage_ko1</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <style>
@@ -84,8 +83,8 @@ h2 {
 	position: relative;
 	background-color: white;
 	width: 100%;
- 	height: calc(var(--vh) * 100); /* 안전한 높이 사용 */
-	/* height: 100%; */
+ 	/* height: calc(var(--vh) * 100); /* 안전한 높이 사용 */
+	height: 100vh;
 	min-height: 56.8rem;
 }
 
@@ -96,7 +95,7 @@ h2 {
 	left : 0;
 	right : 0;
 	bottom : 0;
-	background: url('./img/img-landing.jpg') no-repeat center/cover;
+	background: url('./images/img-landing.jpg') no-repeat center/cover;
 	background-size: 100% 100%;
 	filter: grayscale(100%) brightness(50%);
 	-webkit-filter: grayscale(100%) brightness(50%);
@@ -130,7 +129,6 @@ header {
 	position: relative;
 	z-index: 10;
 }
-
 main {
 	position: relative;
 	width: 100%;
@@ -157,6 +155,16 @@ main h1 strong {
 	font-weight: bold;
 }
 
+main h1 p {
+	font-size: 1.4rem;
+	font-weight: bold;
+}
+
+main h1 .tit {
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
 main .contents  {
 	display : flex;
 	justify-content: center;
@@ -171,7 +179,7 @@ main .contents-gender {
 	gap : 3rem;
 }
 
-main .contents-gender i {
+main .contents-gender .gender {
 	width: 8rem;
 	max-width: 21.6vw;
 	height: 8rem;
@@ -186,16 +194,16 @@ main .contents-gender i {
 	white-space: unset;
 }
 
-main .contents-gender i:active {
+main .contents-gender .gender:active {
 	filter : brightness(0.95);
 }
 
-main .contents-gender i.img-men {
-	background: url('./img/img-men.svg') no-repeat center/contain;
+main .contents-gender .gender.img-men {
+	background: url('./images/img-men.svg') no-repeat center/contain;
 }
 
-main .contents-gender i.img-women {
-	background: url('./img/img-women.svg') no-repeat center/contain;
+main .contents-gender .gender.img-women {
+	background: url('./images/img-women.svg') no-repeat center/contain;
 }
 
 .complete-btn {
@@ -217,6 +225,69 @@ main .contents-gender i.img-women {
 	filter : brightness(0.95);
 }
 
+.complete-btn.change {
+	animation: pulse-shadow-cop 1s infinite; 
+}
+
+@keyframes pulse-shadow-cop {
+  0%, 100% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0.3rem -0.2rem 4rem 1rem rgba(3, 113, 238, 0.75);
+  }
+}
+
+.count-wrap {
+	display : flex;
+	justify-content: center;
+	align-items: center;
+	gap : 0.5rem;
+}
+
+.br {
+	display : block;
+}
+
+.br.none {
+	display : none;
+}
+
+.count-wrap span {
+	font-size: 1.5rem;
+}
+
+.count-wrap span:first-of-type {
+	font-size: 2.6rem;
+	font-weight: 800;
+	color : #368AFE;
+}
+
+.ic-arrowDown {
+	content: '';
+	bottom : 0.5rem;
+	left : 50%;
+	position: absolute;
+	display : inline-flex;
+	justify-self: center;
+	align-items: center;
+	width: 2.7rem;
+	height: 2.9rem;
+	animation: scaleUpDown 1s infinite; 
+	background-color: transparent;
+	transform: translateX(-50%);
+	z-index: 100;
+}
+
+@keyframes scaleUpDown {
+	0%, 100% {
+		transform: scale(0.9) translate(-50%);
+	}
+	50% {
+		transform: scale(1.3) translate(-38%);
+	}
+}
+
 /* 애니메이션 [s] */
 	.step {
 		position: relative;
@@ -226,7 +297,7 @@ main .contents-gender i.img-women {
 	.step .stepbox {
 		width: 6.8rem;
 		height: 6.1rem;
-		background: url('./img/img-charAnimation.png');
+		background: url('./images/img-charAnimation.png');
 		border-radius: 0;
 		position: absolute;
 		left: 0%;
@@ -234,6 +305,7 @@ main .contents-gender i.img-women {
 		top: 10%;
 		animation: ani 1s steps(4, start) infinite;
 		transition: left 1s linear;
+		z-index: 50;
 	}
 	.step .img-flag {
 		position: absolute;
@@ -322,7 +394,7 @@ main .contents-gender i.img-women {
 .modal .modal-popup .box .ic-warning {
 	width: 100%;
 	height: 100%;
-	background: url('./img/img-popupChar.png');
+	background: url('./images/img-popupChar.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -341,7 +413,7 @@ main .contents-gender i.img-women {
 	align-items: center;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: url('./img/ic-handUp.png');
+	background: url('./images/ic-handUp.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -357,7 +429,7 @@ main .contents-gender i.img-women {
 
 /* cop 전용 [s] */
 .cop header .img-logo {
-	background: url('./img/img-logo.svg') no-repeat center/cover;
+	background: url('./images/img-logo.svg') no-repeat center/cover;
 	width: 10.7rem;
 	height: 2.3rem;
 	/* max-width: 31.5% */
@@ -379,19 +451,19 @@ main .contents-gender i.img-women {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./img/img-men-active-cop.svg') no-repeat center/cover;
+	background: url('./images/img-men-active-cop.svg') no-repeat center/cover !important;
 }
 
 .cop .img-women.active {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./img/img-women-active-cop.svg') no-repeat center/cover;
+	background: url('./images/img-women-active-cop.svg') no-repeat center/cover !important;
 }
 
 .cop .step [class*=img-talk] {
 	position: absolute;
-	background: url('./img/img-wait-cop.png') no-repeat center/cover;
+	background: url('./images/img-wait-cop.png') no-repeat center/cover;
 	width: 13.3rem;
 	height: 4.7rem;
 	left : 5.2rem;
@@ -399,34 +471,34 @@ main .contents-gender i.img-women {
 }
 
 .cop .img-talk1 {
-	background: url('./img/img-info-cop.png') no-repeat center/cover !important;
+	background: url('./images/img-info-cop.png') no-repeat center/cover !important;
 	width: 15.8rem !important;
 	left : 5.4rem !important;
 }
 .cop .img-talk2 {
-	background: url('./img/img-data-cop.png') no-repeat center/cover !important;
+	background: url('./images/img-data-cop.png') no-repeat center/cover !important;
 	width: 14.8rem !important;
 	left : 5.4rem !important;
 }
 .cop .img-talk3 {
-	background: url('./img/img-genue-cop.png') no-repeat center/cover !important;
+	background: url('./images/img-genue-cop.png') no-repeat center/cover !important;
 	width: 13rem !important;
 	left : -11.5rem !important;
 }
 .cop .img-talk4 {
-	background: url('./img/img-almost-cop.png') no-repeat center/cover !important;
+	background: url('./images/img-almost-cop.png') no-repeat center/cover !important;
 	width: 12rem !important;
 	height: 4.8rem !important;
 	left : -10.6rem !important;
 }
 .cop .img-talk5 {
-	background: url('./img/img-complete-cop.png') no-repeat center/cover !important;
+	background: url('./images/img-complete-cop.png') no-repeat center/cover !important;
 	width: 14.4rem !important;
 	height: 4.7rem !important;
 	left : -13rem !important;
 }
 .cop .step .img-flag {
-	background: url('./img/img-flag.png') no-repeat center/cover !important;
+	background: url('./images/img-flag.png') no-repeat center/cover !important;
 	position: absolute !important;
 	width: 3rem !important;
 	height: 4.5rem !important;
@@ -446,11 +518,15 @@ main .contents-gender i.img-women {
 	cursor: pointer;
 	transition: all 0.2s;
 }
+
+.cop .ic-arrowDown {
+	background: url('./images/ic-arrowDown-cop.png') no-repeat center/cover;
+}
 /* cop 전용 [e] */
 
 /* ht 전용 [s] */
 .ht header .img-logo {
-	background: url('./img/img-logo-ht.svg') no-repeat center/cover;
+	background: url('./images/img-logo-ht.svg') no-repeat center/cover;
 	width: 10.7rem;
 	height: 2.3rem;
 	/* max-width: 31.5% */
@@ -472,19 +548,19 @@ main .contents-gender i.img-women {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./img/img-men-active-ht.svg') no-repeat center/cover;
+	background: url('./images/img-men-active-ht.svg') no-repeat center/cover !important;
 }
 
 .ht .img-women.active {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./img/img-women-active-ht.svg') no-repeat center/cover;
+	background: url('./images/img-women-active-ht.svg') no-repeat center/cover !important;
 }
 
 .ht .step [class*=img-talk] {
 	position: absolute;
-	background: url('./img/img-wait-ht.png') no-repeat center/cover;
+	background: url('./images/img-wait-ht.png') no-repeat center/cover;
 	width: 13.3rem;
 	height: 4.7rem;
 	left : 5.2rem;
@@ -492,34 +568,34 @@ main .contents-gender i.img-women {
 }
 
 .ht .img-talk1 {
-	background: url('./img/img-info-ht.png') no-repeat center/cover !important;
+	background: url('./images/img-info-ht.png') no-repeat center/cover !important;
 	width: 15.8rem !important;
 	left : 5.4rem !important;
 }
 .ht .img-talk2 {
-	background: url('./img/img-data-ht.png') no-repeat center/cover !important;
+	background: url('./images/img-data-ht.png') no-repeat center/cover !important;
 	width: 14.8rem !important;
 	left : 5.4rem !important;
 }
 .ht .img-talk3 {
-	background: url('./img/img-genue-ht.png') no-repeat center/cover !important;
+	background: url('./images/img-genue-ht.png') no-repeat center/cover !important;
 	width: 13rem !important;
 	left : -11.5rem !important;
 }
 .ht .img-talk4 {
-	background: url('./img/img-almost-ht.png') no-repeat center/cover !important;
+	background: url('./images/img-almost-ht.png') no-repeat center/cover !important;
 	width: 12rem !important;
 	height: 4.8rem !important;
 	left : -10.6rem !important;
 }
 .ht .img-talk5 {
-	background: url('./img/img-complete-ht.png') no-repeat center/cover !important;
+	background: url('./images/img-complete-ht.png') no-repeat center/cover !important;
 	width: 14.4rem !important;
 	height: 4.7rem !important;
 	left : -13rem !important;
 }
 .ht .step .img-flag {
-	background: url('./img/img-flag-ht.png') no-repeat center/cover !important;
+	background: url('./images/img-flag-ht.png') no-repeat center/cover !important;
 	position: absolute !important;
 	width: 3rem !important;
 	height: 4.5rem !important;
@@ -549,11 +625,31 @@ main .contents-gender i.img-women {
 	cursor: pointer;
 	transition: all 0.2s;
 }
+.ht .ic-arrowDown {
+	background: url('./images/ic-arrowDown-ht.png') no-repeat center/cover;
+}
+
+.ht .count-wrap span:first-of-type {
+	color : black !important;
+}
+
+.ht .complete-btn.change {
+	animation: pulse-shadow-ht 2s infinite !important; 
+}
+
+@keyframes pulse-shadow-ht {
+  0%, 100% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 3rem black;
+  }
+}	
 /* ht 전용 [e] */
 
 /* gl 전용 [s] */
 .gl header .img-logo {
-	background: url('./img/img-logo-gl.svg') no-repeat center/cover;
+	background: url('./images/img-logo-gl.svg') no-repeat center/cover;
 	width: 10.7rem;
 	height: 2.3rem;
 	/* max-width: 31.5% */
@@ -575,19 +671,19 @@ main .contents-gender i.img-women {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./img/img-men-active-gl.svg') no-repeat center/cover;
+	background: url('./images/img-men-active-gl.svg') no-repeat center/cover !important;
 }
 
 .gl .img-women.active {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./img/img-women-active-gl.svg') no-repeat center/cover;
+	background: url('./images/img-women-active-gl.svg') no-repeat center/cover !important;
 }
 
 .gl .step [class*=img-talk] {
 	position: absolute;
-	background: url('./img/img-wait-gl.png') no-repeat center/cover;
+	background: url('./images/img-wait-gl.png') no-repeat center/cover;
 	width: 13.3rem;
 	height: 4.7rem;
 	left : 5.2rem;
@@ -595,34 +691,34 @@ main .contents-gender i.img-women {
 }
 
 .gl .img-talk1 {
-	background: url('./img/img-info-gl.png') no-repeat center/cover !important;
+	background: url('./images/img-info-gl.png') no-repeat center/cover !important;
 	width: 15.8rem !important;
 	left : 5.4rem !important;
 }
 .gl .img-talk2 {
-	background: url('./img/img-data-gl.png') no-repeat center/cover !important;
+	background: url('./images/img-data-gl.png') no-repeat center/cover !important;
 	width: 14.8rem !important;
 	left : 5.4rem !important;
 }
 .gl .img-talk3 {
-	background: url('./img/img-genue-gl.png') no-repeat center/cover !important;
+	background: url('./images/img-genue-gl.png') no-repeat center/cover !important;
 	width: 13rem !important;
 	left : -11.5rem !important;
 }
 .gl .img-talk4 {
-	background: url('./img/img-almost-gl.png') no-repeat center/cover !important;
+	background: url('./images/img-almost-gl.png') no-repeat center/cover !important;
 	width: 12rem !important;
 	height: 4.8rem !important;
 	left : -10.6rem !important;
 }
 .gl .img-talk5 {
-	background: url('./img/img-complete-gl.png') no-repeat center/cover !important;
+	background: url('./images/img-complete-gl.png') no-repeat center/cover !important;
 	width: 14.4rem !important;
 	height: 4.7rem !important;
 	left : -13rem !important;
 }
 .gl .step .img-flag {
-	background: url('./img/img-flag-gl.png') no-repeat center/cover !important;
+	background: url('./images/img-flag-gl.png') no-repeat center/cover !important;
 	position: absolute !important;
 	width: 3rem !important;
 	height: 4.5rem !important;
@@ -650,7 +746,36 @@ main .contents-gender i.img-women {
 	cursor: pointer;
 	transition: all 0.2s;
 }
+.gl .ic-arrowDown {
+	background: url('./images/ic-arrowDown-gl.png') no-repeat center/cover;
+}
+
+.gl .count-wrap span:first-of-type {
+	color : #367F76 !important;
+}
+
+.gl .complete-btn.change {
+	animation: pulse-shadow-gl 2s infinite !important; 
+}
+
+@keyframes pulse-shadow-gl {
+  0%, 100% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 3rem #367f76;
+  }
+}	
+
 /* gl 전용 [e] */
+@media (min-width : 500px) {
+	main .contents:first-of-type {
+		padding : 0;
+	}
+	main .contents {
+		padding-left: 8vw;
+	}
+}
 
 @media (min-width : 589px) {
 	main {
@@ -658,9 +783,6 @@ main .contents-gender i.img-women {
 	}
 	main .contents {
 		padding-left: 18vw;
-	}
-	main .contents:first-of-type {
-		padding : 0;
 	}
 	.step .img-wait {
 		top : -1rem;
@@ -699,15 +821,25 @@ main .contents-gender i.img-women {
 	}
 }
 
+@media (max-height: 660px) {
+	main {
+		gap : 0.5rem;
+	}
+	br {
+		display : none;
+	}
+}
+
 @media (max-width : 379px) {
 	main {
 		justify-content: center;
+		gap : 0.5rem;
 	}
 	h1 {
-		font-size: 5.3vw !important;
+		font-size: 5vw !important;
 	}
 	h1 strong {
-		font-size: 6.9vw !important;
+		font-size: 6.3vw !important;
 	}
 	h2 {
 		font-size: 3.7vw;
@@ -719,9 +851,16 @@ main .contents-gender i.img-women {
 		/* height: 10.6vw; */
 		font-size: 4.8vw;
 	}
+	.progress-count {
+		font-size: 5.5vw;
+	}
+	.end-count {
+		font-size: 4vw;
+	}
 }
 
 </style>
+
 </head>
 
 <body>
@@ -730,40 +869,40 @@ main .contents-gender i.img-women {
 			<i class="img-logo"></i>
 		</header>
 		<main>
-			<h1><strong>잠시만요!</strong><br>정품 여부를 확인하는 중입니다.</h1>
+			<h1><strong>잠시만요!</strong><br class="br"><p class="tit">정품 여부를 확인하는 중입니다.</p><br><p>성별을 선택해주세요.</p></h1>
 			<article class="contents contents-gender">
-				<i class="btn gender img-men" value="남자"></i>
-				<i class="btn gender img-women" value="여자"></i>	
+				<button class="btn gender img-men" value="2"></button>
+				<button class="btn gender img-women" value="1"></button>	
 			</article>
 			<article class="contents contents-age">
 				<h2>1. 연령대를 선택해 주세요.</h2>
 				<div class="box-row">
-					<button class="btn age">10대</button>
-					<button class="btn age">20대</button>
-					<button class="btn age">30대</button>
-					<button class="btn age">40대</button>
-					<button class="btn age">50대 이상</button>
+					<button class="btn age" value="1">10대</button>
+					<button class="btn age" value="2">20대</button>
+					<button class="btn age" value="3">30대</button>
+					<button class="btn age" value="4">40대</button>
+					<button class="btn age" value="5">50대 이상</button>
 				</div>
 			</article>
 			<article class="contents contents-show">
 				<h2>2. 모바일 앱과 웹사이트 중 어느 쪽에서 더 자주 쇼핑을 하시나요?</h2>
 				<div class="box-row">
-					<button class="btn platform">모바일 앱</button>
-					<button class="btn platform">웹 사이트</button>
+					<button class="btn platform" value="1">모바일 앱</button>
+					<button class="btn platform" value="2">웹 사이트</button>
 				</div>
 			</article>
 			<article class="contents contents-preference">
 				<h2>3. 온라인/모바일 쇼핑몰과 오프라인 구매처 중 어느 곳을 더 선호하시나요?</h2>
 				<div class="box-row">
-					<button class="btn situation">온라인</button>
-					<button class="btn situation">오프라인</button>
+					<button class="btn situation" value="1">온라인</button>
+					<button class="btn situation" value="2">오프라인</button>
 				</div>
 			</article>
 			<article class="contents contents-preference">
 				<h2>4. 브랜드 공식몰과 온라인 쇼핑몰 중 어디에서 구매하는 것을 선호하시나요?</h2>
 				<div class="box-row">
-					<button class="btn preference">브랜드 공식몰</button>
-					<button class="btn preference">온라인 쇼핑몰</button>
+					<button class="btn preference" value="1">브랜드 공식몰</button>
+					<button class="btn preference" value="2">온라인 쇼핑몰</button>
 				</div>
 			</article>
 		</main>
@@ -796,20 +935,11 @@ main .contents-gender i.img-women {
 	</div>
 	
 <script>
-
-// 0) 브라우저 높이 최우선 실행
-function setRealVh() {
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-setRealVh();
-window.addEventListener('resize', setRealVh);
-
 $(document).ready(function() {
 	btnClick();
 	updateUI(); // 초기 상태 맞추기
 	iOSZoomScale();
-	completeBtnClick();
+	completeBtn();
 	popCancle();
 });
 
@@ -831,7 +961,7 @@ $('.contents .btn').on('click', function() {
 });
 }
 
-  // 2) active 클래스 개수에 따라 UI 각 요소를 옮기거나 넓이 변경
+// 2) active 클래스 개수에 따라 UI 각 요소를 옮기거나 넓이 변경
 function updateUI() {
   const activeCount = $('.contents .btn.active').length;
   const $talk = $('.img-talk');
@@ -839,6 +969,11 @@ function updateUI() {
   const $flag = $('.img-flag');
   const $box  = $('.step .stepbox');
   const $bar  = $('.progressbar-wrap .ing-bar');
+  const $strong = $('main h1 strong');
+  const isCompleted = activeCount === 5;
+  const hasProgress = activeCount > 0;
+  const $countWrap = $('.count-wrap');
+  const $completeBtn = $('.complete-btn');
 
   // 3) img-talk 숫자 클래스 토글
   $talk.removeClass(function(i, cls) {
@@ -856,17 +991,62 @@ function updateUI() {
   $warp.removeClass(function(i, cls) {
     return (cls.match(/(^|\s)wrap\d+/g) || []).join(' ');
   });
-  if (activeCount > 0) {
-    $warp.addClass('wrap' + (activeCount));
-  }
+
+	// 4-1. wrap 클래스 갱신
+	if (hasProgress) {
+		$warp.addClass('wrap' + activeCount);
+	} else {
+		$strong.html('잠시만요!');
+	}
+
+	// 4-2. strong 내 카운트 표시 갱신
+	if (hasProgress) {
+		const progressText = '0' + activeCount;
+		const countEl = '<div class="count-wrap"><span class="progress-count">'+0+ + progressText + '</span> /<span class="end-count">5</span></div>';
+		$('.br').addClass('none');
+
+		if ($countWrap.length === 0) {
+			$strong.html('').append(countEl);
+		} else {
+			$countWrap.find('.progress-count').text(progressText);
+		}
+	} else {
+		$('.br').removeClass('none');
+	}
+
+	// 4-3. 버튼 상태 갱신
+	$completeBtn.toggleClass('change', isCompleted) .text( isCompleted ? '정품 결과를 지금 확인해보세요!' : '공식 정품 인증 설문에 참여해주세요!');
+	
+	// 4-4. 화살표 버튼 추가
+	if (activeCount === 5) {
+		const arrow = '<i class="ic-arrowDown"></i>'
+		$('.svgBox').append(arrow);
+	} else {
+		$('.ic-arrowDown').remove();
+	}
+
+	// 4-5. 타이틀 텍스트 수정
+	if (activeCount === 1) {
+		$('.tit').text('스캔 정보를 불러오고 있어요')
+	} else if (activeCount === 2 ) {
+		$('.tit').text('정품 여부를 분석하고 있어요')
+	} else if (activeCount === 3 ) {
+		$('.tit').text('제품 정보를 검토 중입니다')
+	} else if (activeCount === 4 ) {
+		$('.tit').text('브랜드 인증 정보를 확인 중입니다')
+	} else if (activeCount === 5 ) {
+		$('.tit').text('완료되었어요! 하단 버튼을 눌러주세요')
+	} else {
+		$('.tit').text('정품 여부를 확인하는 중입니다')
+	}
 
   // 5) .stepbox 이동 (첫 클릭 25%, 그 외 count*20%)
   if (activeCount === 0) {
     $box.css('left', '0%');
   } else if (activeCount === 1) {
-    $box.css('left', 'calc(25% - 6.4rem)');
+    $box.css('left', 'calc(25% - 6.8rem)');
   } else {
-    $box.css('left', `calc(${activeCount * 20}% - 6.4rem)`);
+    $box.css('left', 'calc(' + (activeCount * 20) + '% - 6.8rem)');
   }
 
   // 6) 프로그래스바 (첫 클릭 25%, 그 외 count*20%)
