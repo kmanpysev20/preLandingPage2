@@ -95,7 +95,7 @@ h2 {
 	left : 0;
 	right : 0;
 	bottom : 0;
-	background: url('./images/img-landing.jpg') no-repeat center/cover;
+	background: url('../images/img-landing.jpg') no-repeat center/cover;
 	background-size: 100% 100%;
 	filter: grayscale(100%) brightness(50%);
 	-webkit-filter: grayscale(100%) brightness(50%);
@@ -165,6 +165,10 @@ main h1 .tit {
 	font-weight: bold;
 }
 
+main h1 .age-select {
+	text-align: left;
+}
+
 main .contents  {
 	display : flex;
 	justify-content: center;
@@ -192,6 +196,8 @@ main .contents-gender .gender {
 	overflow: unset;
 	text-overflow: unset;
 	white-space: unset;
+	animation: gender-blink 1s ease-in-out infinite alternate;
+  	will-change: opacity;
 }
 
 main .contents-gender .gender:active {
@@ -199,12 +205,26 @@ main .contents-gender .gender:active {
 }
 
 main .contents-gender .gender.img-men {
-	background: url('./images/img-men.svg') no-repeat center/contain;
+	background: url('../images/img-men.svg') no-repeat center/contain;
 }
 
 main .contents-gender .gender.img-women {
-	background: url('./images/img-women.svg') no-repeat center/contain;
+	background: url('../images/img-women.svg') no-repeat center/contain;
 }
+
+main .contents-gender .gender.blink-off {
+	animation : unset;
+}
+
+@keyframes gender-blink {
+	from { 
+		opacity: 1;
+	}
+	to { 
+		opacity: 0.1; 
+	}
+}
+
 
 .complete-btn {
 	width: 100%;
@@ -234,7 +254,7 @@ main .contents-gender .gender.img-women {
     box-shadow: none;
   }
   50% {
-    box-shadow: 0.3rem -0.2rem 4rem 1rem rgba(3, 113, 238, 0.75);
+    box-shadow: 0.3rem -0.2rem 5rem 1rem rgba(3, 113, 238, 0.75);
   }
 }
 
@@ -274,7 +294,6 @@ main .contents-gender .gender.img-women {
 	width: 2.7rem;
 	height: 2.9rem;
 	animation: scaleUpDown 1s infinite; 
-	background-color: transparent;
 	transform: translateX(-50%);
 	z-index: 100;
 }
@@ -284,7 +303,7 @@ main .contents-gender .gender.img-women {
 		transform: scale(0.9) translate(-50%);
 	}
 	50% {
-		transform: scale(1.3) translate(-38%);
+		transform: scale(1.3) translate(-41%);
 	}
 }
 
@@ -297,7 +316,7 @@ main .contents-gender .gender.img-women {
 	.step .stepbox {
 		width: 6.8rem;
 		height: 6.1rem;
-		background: url('./images/img-charAnimation.png');
+		background: url('../images/img-charAnimation.png');
 		border-radius: 0;
 		position: absolute;
 		left: 0%;
@@ -394,7 +413,7 @@ main .contents-gender .gender.img-women {
 .modal .modal-popup .box .ic-warning {
 	width: 100%;
 	height: 100%;
-	background: url('./images/img-popupChar.png');
+	background: url('../images/img-popupChar.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -413,7 +432,7 @@ main .contents-gender .gender.img-women {
 	align-items: center;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: url('./images/ic-handUp.png');
+	background: url('../images/ic-handUp.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -425,11 +444,17 @@ main .contents-gender .gender.img-women {
 	font-size: 1.4rem;
 	margin-top : 1.5rem;
 } 
+
+.modal .modal-popup .box .txt .miss-nums {
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
 /* 모달 팝업 [e] */
 
 /* cop 전용 [s] */
 .cop header .img-logo {
-	background: url('./images/img-logo.svg') no-repeat center/cover;
+	background: url('../images/img-logo.svg') no-repeat center/cover;
 	width: 10.7rem;
 	height: 2.3rem;
 	/* max-width: 31.5% */
@@ -451,19 +476,19 @@ main .contents-gender .gender.img-women {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./images/img-men-active-cop.svg') no-repeat center/cover !important;
+	background: url('../images/img-men-active-cop.svg') no-repeat center/cover !important;
 }
 
 .cop .img-women.active {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./images/img-women-active-cop.svg') no-repeat center/cover !important;
+	background: url('../images/img-women-active-cop.svg') no-repeat center/cover !important;
 }
 
 .cop .step [class*=img-talk] {
 	position: absolute;
-	background: url('./images/img-wait-cop.png') no-repeat center/cover;
+	background: url('../images/img-wait-cop.png') no-repeat center/cover;
 	width: 13.3rem;
 	height: 4.7rem;
 	left : 5.2rem;
@@ -471,34 +496,34 @@ main .contents-gender .gender.img-women {
 }
 
 .cop .img-talk1 {
-	background: url('./images/img-info-cop.png') no-repeat center/cover !important;
+	background: url('../images/img-info-cop.png') no-repeat center/cover !important;
 	width: 15.8rem !important;
 	left : 5.4rem !important;
 }
 .cop .img-talk2 {
-	background: url('./images/img-data-cop.png') no-repeat center/cover !important;
+	background: url('../images/img-data-cop.png') no-repeat center/cover !important;
 	width: 14.8rem !important;
 	left : 5.4rem !important;
 }
 .cop .img-talk3 {
-	background: url('./images/img-genue-cop.png') no-repeat center/cover !important;
+	background: url('../images/img-genue-cop.png') no-repeat center/cover !important;
 	width: 13rem !important;
 	left : -11.5rem !important;
 }
 .cop .img-talk4 {
-	background: url('./images/img-almost-cop.png') no-repeat center/cover !important;
+	background: url('../images/img-almost-cop.png') no-repeat center/cover !important;
 	width: 12rem !important;
 	height: 4.8rem !important;
 	left : -10.6rem !important;
 }
 .cop .img-talk5 {
-	background: url('./images/img-complete-cop.png') no-repeat center/cover !important;
+	background: url('../images/img-complete-cop.png') no-repeat center/cover !important;
 	width: 14.4rem !important;
 	height: 4.7rem !important;
 	left : -13rem !important;
 }
 .cop .step .img-flag {
-	background: url('./images/img-flag.png') no-repeat center/cover !important;
+	background: url('../images/img-flag.png') no-repeat center/cover !important;
 	position: absolute !important;
 	width: 3rem !important;
 	height: 4.5rem !important;
@@ -520,13 +545,13 @@ main .contents-gender .gender.img-women {
 }
 
 .cop .ic-arrowDown {
-	background: url('./images/ic-arrowDown-cop.png') no-repeat center/cover;
+	background: url('../images/ic-arrowDown-cop.png') no-repeat center/cover;
 }
 /* cop 전용 [e] */
 
 /* ht 전용 [s] */
 .ht header .img-logo {
-	background: url('./images/img-logo-ht.svg') no-repeat center/cover;
+	background: url('../images/img-logo-ht.svg') no-repeat center/cover;
 	width: 10.7rem;
 	height: 2.3rem;
 	/* max-width: 31.5% */
@@ -548,19 +573,19 @@ main .contents-gender .gender.img-women {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./images/img-men-active-ht.svg') no-repeat center/cover !important;
+	background: url('../images/img-men-active-ht.svg') no-repeat center/cover !important;
 }
 
 .ht .img-women.active {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./images/img-women-active-ht.svg') no-repeat center/cover !important;
+	background: url('../images/img-women-active-ht.svg') no-repeat center/cover !important;
 }
 
 .ht .step [class*=img-talk] {
 	position: absolute;
-	background: url('./images/img-wait-ht.png') no-repeat center/cover;
+	background: url('../images/img-wait-ht.png') no-repeat center/cover;
 	width: 13.3rem;
 	height: 4.7rem;
 	left : 5.2rem;
@@ -568,34 +593,34 @@ main .contents-gender .gender.img-women {
 }
 
 .ht .img-talk1 {
-	background: url('./images/img-info-ht.png') no-repeat center/cover !important;
+	background: url('../images/img-info-ht.png') no-repeat center/cover !important;
 	width: 15.8rem !important;
 	left : 5.4rem !important;
 }
 .ht .img-talk2 {
-	background: url('./images/img-data-ht.png') no-repeat center/cover !important;
+	background: url('../images/img-data-ht.png') no-repeat center/cover !important;
 	width: 14.8rem !important;
 	left : 5.4rem !important;
 }
 .ht .img-talk3 {
-	background: url('./images/img-genue-ht.png') no-repeat center/cover !important;
+	background: url('../images/img-genue-ht.png') no-repeat center/cover !important;
 	width: 13rem !important;
 	left : -11.5rem !important;
 }
 .ht .img-talk4 {
-	background: url('./images/img-almost-ht.png') no-repeat center/cover !important;
+	background: url('../images/img-almost-ht.png') no-repeat center/cover !important;
 	width: 12rem !important;
 	height: 4.8rem !important;
 	left : -10.6rem !important;
 }
 .ht .img-talk5 {
-	background: url('./images/img-complete-ht.png') no-repeat center/cover !important;
+	background: url('../images/img-complete-ht.png') no-repeat center/cover !important;
 	width: 14.4rem !important;
 	height: 4.7rem !important;
 	left : -13rem !important;
 }
 .ht .step .img-flag {
-	background: url('./images/img-flag-ht.png') no-repeat center/cover !important;
+	background: url('../images/img-flag-ht.png') no-repeat center/cover !important;
 	position: absolute !important;
 	width: 3rem !important;
 	height: 4.5rem !important;
@@ -626,7 +651,7 @@ main .contents-gender .gender.img-women {
 	transition: all 0.2s;
 }
 .ht .ic-arrowDown {
-	background: url('./images/ic-arrowDown-ht.png') no-repeat center/cover;
+	background: url('../images/ic-arrowDown-ht.png') no-repeat center/cover;
 }
 
 .ht .count-wrap span:first-of-type {
@@ -634,7 +659,7 @@ main .contents-gender .gender.img-women {
 }
 
 .ht .complete-btn.change {
-	animation: pulse-shadow-ht 2s infinite !important; 
+	animation: pulse-shadow-ht 1s infinite !important; 
 }
 
 @keyframes pulse-shadow-ht {
@@ -642,14 +667,14 @@ main .contents-gender .gender.img-women {
     box-shadow: none;
   }
   50% {
-    box-shadow: 0 0 3rem black;
+    box-shadow: 0.3rem -0.2rem 5rem 1rem black;
   }
 }	
 /* ht 전용 [e] */
 
 /* gl 전용 [s] */
 .gl header .img-logo {
-	background: url('./images/img-logo-gl.svg') no-repeat center/cover;
+	background: url('../images/img-logo-gl.svg') no-repeat center/cover;
 	width: 10.7rem;
 	height: 2.3rem;
 	/* max-width: 31.5% */
@@ -671,19 +696,19 @@ main .contents-gender .gender.img-women {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./images/img-men-active-gl.svg') no-repeat center/cover !important;
+	background: url('../images/img-men-active-gl.svg') no-repeat center/cover !important;
 }
 
 .gl .img-women.active {
 	background-color: unset;
 	color : unset;
 	border: unset;
-	background: url('./images/img-women-active-gl.svg') no-repeat center/cover !important;
+	background: url('../images/img-women-active-gl.svg') no-repeat center/cover !important;
 }
 
 .gl .step [class*=img-talk] {
 	position: absolute;
-	background: url('./images/img-wait-gl.png') no-repeat center/cover;
+	background: url('../images/img-wait-gl.png') no-repeat center/cover;
 	width: 13.3rem;
 	height: 4.7rem;
 	left : 5.2rem;
@@ -691,34 +716,34 @@ main .contents-gender .gender.img-women {
 }
 
 .gl .img-talk1 {
-	background: url('./images/img-info-gl.png') no-repeat center/cover !important;
+	background: url('../images/img-info-gl.png') no-repeat center/cover !important;
 	width: 15.8rem !important;
 	left : 5.4rem !important;
 }
 .gl .img-talk2 {
-	background: url('./images/img-data-gl.png') no-repeat center/cover !important;
+	background: url('../images/img-data-gl.png') no-repeat center/cover !important;
 	width: 14.8rem !important;
 	left : 5.4rem !important;
 }
 .gl .img-talk3 {
-	background: url('./images/img-genue-gl.png') no-repeat center/cover !important;
+	background: url('../images/img-genue-gl.png') no-repeat center/cover !important;
 	width: 13rem !important;
 	left : -11.5rem !important;
 }
 .gl .img-talk4 {
-	background: url('./images/img-almost-gl.png') no-repeat center/cover !important;
+	background: url('../images/img-almost-gl.png') no-repeat center/cover !important;
 	width: 12rem !important;
 	height: 4.8rem !important;
 	left : -10.6rem !important;
 }
 .gl .img-talk5 {
-	background: url('./images/img-complete-gl.png') no-repeat center/cover !important;
+	background: url('../images/img-complete-gl.png') no-repeat center/cover !important;
 	width: 14.4rem !important;
 	height: 4.7rem !important;
 	left : -13rem !important;
 }
 .gl .step .img-flag {
-	background: url('./images/img-flag-gl.png') no-repeat center/cover !important;
+	background: url('../images/img-flag-gl.png') no-repeat center/cover !important;
 	position: absolute !important;
 	width: 3rem !important;
 	height: 4.5rem !important;
@@ -747,7 +772,7 @@ main .contents-gender .gender.img-women {
 	transition: all 0.2s;
 }
 .gl .ic-arrowDown {
-	background: url('./images/ic-arrowDown-gl.png') no-repeat center/cover;
+	background: url('../images/ic-arrowDown-gl.png') no-repeat center/cover;
 }
 
 .gl .count-wrap span:first-of-type {
@@ -755,7 +780,7 @@ main .contents-gender .gender.img-women {
 }
 
 .gl .complete-btn.change {
-	animation: pulse-shadow-gl 2s infinite !important; 
+	animation: pulse-shadow-gl 1s infinite !important; 
 }
 
 @keyframes pulse-shadow-gl {
@@ -763,7 +788,7 @@ main .contents-gender .gender.img-women {
     box-shadow: none;
   }
   50% {
-    box-shadow: 0 0 3rem #367f76;
+    box-shadow: 0.3rem -0.2rem 5rem 1rem #367f76;
   }
 }	
 
@@ -775,6 +800,10 @@ main .contents-gender .gender.img-women {
 	main .contents {
 		padding-left: 8vw;
 	}
+
+	main h1 .age-select {
+		padding-left: 8vw;
+	}
 }
 
 @media (min-width : 589px) {
@@ -782,6 +811,10 @@ main .contents-gender .gender.img-women {
 		justify-content: space-around;
 	}
 	main .contents {
+		padding-left: 18vw;
+	}
+
+	main h1 .age-select {
 		padding-left: 18vw;
 	}
 	.step .img-wait {
@@ -793,11 +826,17 @@ main .contents-gender .gender.img-women {
 	main .contents {
 		padding-left: 20vw;
 	}
+	main h1 .age-select {
+		padding-left: 20vw;
+	}
 }
 
 
 @media (min-width : 736px) {
 	main .contents {
+		padding-left: 23vw;
+	}
+	main h1 .age-select {
 		padding-left: 23vw;
 	}
 }
@@ -806,10 +845,16 @@ main .contents-gender .gender.img-women {
 	main .contents {
 		padding-left: 25vw;
 	}
+	main h1 .age-select {
+		padding-left: 25vw;
+	}
 }
 
 @media (min-width : 1024px) {
 	main .contents {
+		padding-left: 27vw;
+	}
+	main h1 .age-select {
 		padding-left: 27vw;
 	}
 }
@@ -817,6 +862,9 @@ main .contents-gender .gender.img-women {
 
 @media (min-width : 1280px) {
 	main .contents {
+		padding-left: 30vw;
+	}
+	main h1 .age-select {
 		padding-left: 30vw;
 	}
 }
@@ -857,6 +905,9 @@ main .contents-gender .gender.img-women {
 	.end-count {
 		font-size: 4vw;
 	}
+	main h1 .age-select {
+		font-size: 3.7vw;
+	}
 }
 
 </style>
@@ -864,18 +915,18 @@ main .contents-gender .gender.img-women {
 </head>
 
 <body>
-	<div class="wrap cop">
+	<div class="wrap ht">
 		<header>	
 			<i class="img-logo"></i>
 		</header>
 		<main>
-			<h1><strong>잠시만요!</strong><br class="br"><p class="tit">정품 여부를 확인하는 중입니다.</p><br><p>성별을 선택해주세요.</p></h1>
+			<h1><strong>잠시만요!</strong><br class="br"><p class="tit">정품 여부를 확인하는 중입니다.</p><br><p class="age-select">1. 성별을 선택해주세요.</p></h1>
 			<article class="contents contents-gender">
 				<button class="btn gender img-men" value="2"></button>
 				<button class="btn gender img-women" value="1"></button>	
 			</article>
 			<article class="contents contents-age">
-				<h2>1. 연령대를 선택해 주세요.</h2>
+				<h2>2. 연령대를 선택해 주세요.</h2>
 				<div class="box-row">
 					<button class="btn age" value="1">10대</button>
 					<button class="btn age" value="2">20대</button>
@@ -885,21 +936,21 @@ main .contents-gender .gender.img-women {
 				</div>
 			</article>
 			<article class="contents contents-show">
-				<h2>2. 모바일 앱과 웹사이트 중 어느 쪽에서 더 자주 쇼핑을 하시나요?</h2>
+				<h2>3. 모바일 앱과 웹사이트 중 어느 쪽에서 더 자주 쇼핑을 하시나요?</h2>
 				<div class="box-row">
 					<button class="btn platform" value="1">모바일 앱</button>
 					<button class="btn platform" value="2">웹 사이트</button>
 				</div>
 			</article>
 			<article class="contents contents-preference">
-				<h2>3. 온라인/모바일 쇼핑몰과 오프라인 구매처 중 어느 곳을 더 선호하시나요?</h2>
+				<h2>4. 온라인/모바일 쇼핑몰과 오프라인 구매처 중 어느 곳을 더 선호하시나요?</h2>
 				<div class="box-row">
 					<button class="btn situation" value="1">온라인</button>
 					<button class="btn situation" value="2">오프라인</button>
 				</div>
 			</article>
 			<article class="contents contents-preference">
-				<h2>4. 브랜드 공식몰과 온라인 쇼핑몰 중 어디에서 구매하는 것을 선호하시나요?</h2>
+				<h2>5. 브랜드 공식몰과 온라인 쇼핑몰 중 어디에서 구매하는 것을 선호하시나요?</h2>
 				<div class="box-row">
 					<button class="btn preference" value="1">브랜드 공식몰</button>
 					<button class="btn preference" value="2">온라인 쇼핑몰</button>
@@ -923,7 +974,7 @@ main .contents-gender .gender.img-women {
 		<div class="modal modal-select">
 			<div class="modal-popup">
 				<div class="box">
-					<p class="txt">잠깐만요! 빠진 항목이 있어요<i class="ic-handUp"></i></p>
+					<p class="txt">잠깐만요! 빠진 <b class="miss-nums"></b> 항목이 있어요<i class="ic-handUp"></i></p>
 					<p class="txt">(모두 작성 후 확인 버튼을 눌러주세요!)</p>
 					<i class="ic-warning"></i>
 					<button class="check-btn">확인</button>
@@ -974,6 +1025,14 @@ function updateUI() {
   const hasProgress = activeCount > 0;
   const $countWrap = $('.count-wrap');
   const $completeBtn = $('.complete-btn');
+  const $genders = $('.contents-gender .gender');
+
+// gender 부분 클래스 추가
+if ($genders.filter('.active').length > 0) {
+  $genders.addClass('blink-off');
+} else {
+  $genders.removeClass('blink-off');
+}
 
   // 3) img-talk 숫자 클래스 토글
   $talk.removeClass(function(i, cls) {
@@ -1062,21 +1121,25 @@ function updateUI() {
 }
 
 // 7) 정품결과 확인 버튼
-function completeBtnClick() {
+function completeBtn() {
 	$('.complete-btn').on('click', function() {
-		if($('.gender').hasClass('active') && 
-		$('.age').hasClass('active') && 
-		$('.platform').hasClass('active') && 
-		$('.situation').hasClass('active') && 
-		$('.preference').hasClass('active')) {
-			const gender = $('.gender.active').attr('value');
-			const age = $('.age.active').text();
-			const platform = $('.platform.active').text();
-			const situation = $('.situation.active').text();
-			const preference = $('.preference.active').text();
-			alert('※Complete(TEST)※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
+		 let missing = getMissingIndexes();
+
+	if (missing.length === 0) {
+		// 모두 선택된 경우 기존 동작 유지
+		const gender      = $('.gender.active').attr('value');
+		const age         = $('.age.active').text();
+		const platform    = $('.platform.active').text();
+		const situation   = $('.situation.active').text();
+		const preference  = $('.preference.active').text();
+		alert('※Complete(TEST)※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
 		} else {
-			$('.modal').fadeIn(500);
+		// [추가] 누락 번호를 "1, 3, 5번" 형태로 만들어 b 태그에 삽입
+		var label = missing.join(', ') + '번';
+		$('.modal.modal-select .miss-nums').text(label);
+
+		// 모달 오픈
+		$('.modal.modal-select').fadeIn(500);
 		}
 	});
 }
@@ -1107,6 +1170,19 @@ function iOSZoomScale() {
 	});
 }
 // iOS 짐 및 확대기능 막기 [e]
+
+// 10) 누락된 질문 번호를 배열로 반환 [s]
+function getMissingIndexes() {
+  let missing = [];
+  if (!$('.gender').hasClass('active'))     missing.push(1); // 1. 성별
+  if (!$('.age').hasClass('active'))        missing.push(2); // 2. 연령대
+  if (!$('.platform').hasClass('active'))   missing.push(3); // 3. 앱/웹
+  if (!$('.situation').hasClass('active'))  missing.push(4); // 4. 온/오프라인 선호
+  if (!$('.preference').hasClass('active')) missing.push(5); // 5. 공식몰/쇼핑몰 선호
+  return missing;
+}
+// 10) 누락된 질문 번호를 배열로 반환 [e]
+
 
 </script>
 </body>
