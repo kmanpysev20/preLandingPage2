@@ -1122,26 +1122,34 @@ if ($genders.filter('.active').length > 0) {
 
 // 7) 정품결과 확인 버튼
 function completeBtn() {
-	$('.complete-btn').on('click', function() {
-		 let missing = getMissingIndexes();
+  $('.complete-btn').on('click', function() {
+    let missing = getMissingIndexes();
 
-	if (missing.length === 0) {
-		// 모두 선택된 경우 기존 동작 유지
-		const gender      = $('.gender.active').attr('value');
-		const age         = $('.age.active').text();
-		const platform    = $('.platform.active').text();
-		const situation   = $('.situation.active').text();
-		const preference  = $('.preference.active').text();
-		alert('※Complete(TEST)※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
-		} else {
-		// [추가] 누락 번호를 "1, 3, 5번" 형태로 만들어 b 태그에 삽입
-		var label = missing.join(', ') + '번';
-		$('.modal.modal-select .miss-nums').text(label);
+    if (missing.length === 0) {
+      // 모두 선택된 경우 기존 동작 유지
+      const gender      = $('.gender.active').attr('value');
+      const age         = $('.age.active').text();
+      const platform    = $('.platform.active').text();
+      const situation   = $('.situation.active').text();
+      const preference  = $('.preference.active').text();
+      alert('※Complete(TEST)※\n' + gender + '\n' + age + '\n' + platform + '\n' + situation + '\n' + preference);
+    } else {
+      // gender(1번)은 문구, 나머지(2~5번)는 1~4번으로 재매핑해 표시
+      const hasGenderMissing = missing.indexOf(1) !== -1;
 
-		// 모달 오픈
-		$('.modal.modal-select').fadeIn(500);
-		}
-	});
+      const othersLabel = missing
+        .filter(function(n){ return n !== 1; })       // 2~5만 남김
+        .map(function(n){ return (n - 1) + '번'; });  // 2→1번, 3→2번, 4→3번, 5→4번
+
+      const parts = [];
+      if (hasGenderMissing) parts.push('성별');
+      if (othersLabel.length) parts.push(othersLabel.join(', '));
+
+      const label = parts.join(', ');
+      $('.modal.modal-select .miss-nums').text(label);
+      $('.modal.modal-select').fadeIn(500);
+    }
+  });
 }
 
 // 8) 팝업 버튼
