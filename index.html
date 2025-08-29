@@ -129,6 +129,19 @@ header {
 	position: relative;
 	z-index: 10;
 }
+
+header .img-logo {
+	margin-right: auto;
+}
+
+header p {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color : red;
+	text-decoration-line: underline;
+	text-underline-offset : 2px;
+}
+
 main {
 	position: relative;
 	width: 100%;
@@ -788,6 +801,28 @@ main .contents-gender .gender.blink-off {
   }
 }	
 
+/* 타이핑 애니메이션 */
+.typing{
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.typing::after{
+  content: "";
+  display: inline-block;
+  background: currentColor; /* 텍스트 색상과 동일 */
+  margin-left: 2px;
+  vertical-align: -0.2em;
+  animation: caretBlink .8s steps(1) infinite;
+}
+@keyframes caretBlink{ 50%{ opacity: 0; } }
+
+/* 접근성: 움직임 최소화 설정 시 애니메이션 비활성화 */
+@media (prefers-reduced-motion: reduce){
+  .typing::after{ animation: none; }
+}
+
+
 /* gl 전용 [e] */
 @media (min-width : 500px) {
 	main .contents:first-of-type {
@@ -892,6 +927,7 @@ main .contents-gender .gender.blink-off {
 	<div class="wrap ht">
 		<header>	
 			<i class="img-logo"></i>
+			<p class="typing">가품이 의심 됩니다</p>
 		</header>
 		<main>
 			<h1><strong>잠시만요!</strong><br class="br"><p class="tit">정품 여부를 확인하는 중입니다.</p><br><p class="age-select">성별을 선택해주세요.</p></h1>
@@ -966,8 +1002,35 @@ $(document).ready(function() {
 	iOSZoomScale();
 	completeBtn();
 	popCancle();
+	textTyping();
 });
 
+// 가품 의심 애니메이션 
+function textTyping() {
+  $('.typing').each(function(){
+    const $el = $(this);
+    const fullText = $el.text().trim();
+    const chars = Array.from(fullText); // 한글 포함 글자 단위
+    const len   = chars.length;
+
+    const total = 2000; // 타이핑에 걸리는 시간(ms) = 2초
+    const hold  = 1000; // 모두 노출 후 유지 시간(ms) = 1초
+
+    function play(){
+      $el.text(''); // 시작 시 비우기
+      for (let i = 1; i <= len; i++){
+        const t = Math.round(i * total / len); // 균등 간격
+        setTimeout(() => {
+          $el.text(chars.slice(0, i).join(''));
+        }, t);
+      }
+      // 마지막 글자 표시(t=total) 후 hold만큼 그대로 유지했다가 재시작
+      setTimeout(play, total + hold);
+    }
+
+    play();
+  });
+}
 
 // 1) 버튼 토글 & 클릭 시 UI 업데이트 호출
 function btnClick() {
